@@ -103,7 +103,7 @@ const projectsData = [
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showAllProjects, setShowAllProjects] = useState(false);
-  
+
   // Contact Form State
   const [formData, setFormData] = useState({
     name: '',
@@ -111,6 +111,8 @@ function App() {
     service: '',
     message: ''
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<string | null>(null);
 
   const handleInputChange = (e: any) => {
     const { id, value } = e.target;
@@ -120,22 +122,48 @@ function App() {
     }));
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
     const { name, email, service, message } = formData;
-    
+
     if (!name || !email || !message) {
       alert('Please fill in all required fields (Name, Email, Message).');
       return;
     }
-    
-    const subject = `New Inquiry from ${name} - ${service || 'General'}`;
-    const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0AService Needed: ${service}%0D%0A%0D%0AMessage:%0D%0A${message}`;
-    
-    window.location.href = `mailto:codecraftsolutionslk@gmail.com?subject=${subject}&body=${body}`;
-    
-    // Clear form after submission attempt
-    setFormData({ name: '', email: '', service: '', message: '' });
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          // TODO: Replace with your actual Web3Forms access key
+          access_key: "e300e3a7-22a6-4d83-837c-addb91d807d4",
+          name: name,
+          email: email,
+          service: service || 'General',
+          message: message,
+          subject: `New Inquiry from ${name} - ${service || 'General'}`
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', service: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const toggleMenu = () => {
@@ -410,9 +438,19 @@ function App() {
                   <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">Message *</label>
                   <textarea id="message" value={formData.message} onChange={handleInputChange} required rows={4} className="w-full bg-navy-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all resize-none" placeholder="Tell us about your project..."></textarea>
                 </div>
-                <button type="submit" className="w-full bg-cyan-500 hover:bg-cyan-400 text-navy-900 font-bold py-4 px-8 rounded-lg transition-all duration-300 shadow-[0_0_15px_rgba(34,211,238,0.3)] hover:shadow-[0_0_25px_rgba(34,211,238,0.5)]">
-                  Send Message
+                <button type="submit" disabled={isSubmitting} className="w-full bg-cyan-500 hover:bg-cyan-400 text-navy-900 font-bold py-4 px-8 rounded-lg transition-all duration-300 shadow-[0_0_15px_rgba(34,211,238,0.3)] hover:shadow-[0_0_25px_rgba(34,211,238,0.5)] disabled:opacity-70 disabled:cursor-not-allowed">
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
+                {submitStatus === 'success' && (
+                  <div className="p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-400 text-center">
+                    Message sent successfully! We'll get back to you soon.
+                  </div>
+                )}
+                {submitStatus === 'error' && (
+                  <div className="p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-400 text-center">
+                    Something went wrong. Did you add your Web3Forms Access Key in the code?
+                  </div>
+                )}
               </form>
             </div>
 
