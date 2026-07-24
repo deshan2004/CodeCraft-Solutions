@@ -25,19 +25,22 @@ const projectsData = [
     name: "Sky-Drifter",
     description: "High-performance 2D platformer developed using the Phaser 3 game engine.",
     image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    link: "https://github.com/deshan2004/Sky-Drifter"
+    link: "https://deshan2004.github.io/Sky-Drifter/",
+    isLive: true
   },
   {
     name: "CineMate",
     description: "A sleek movie & TV show discovery web app with real-time data integration.",
     image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    link: "https://github.com/deshan2004/CineMate"
+    link: "https://deshan2004.github.io/CineMate/",
+    isLive: true
   },
   {
     name: "TailWatch",
     description: "Community-Powered Stray Dog Care & Rabies Prevention platform.",
     image: "https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    link: "https://github.com/deshan2004/TailWatch"
+    link: "https://deshan2004.github.io/TailWatch/",
+    isLive: true
   },
   {
     name: "CodePulse",
