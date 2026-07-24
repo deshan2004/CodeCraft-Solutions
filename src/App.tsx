@@ -115,6 +115,33 @@ const projectsData = [
   }
 ];
 
+const techCategories = [
+  {
+    title: "Frontend Development",
+    skills: ["HTML5", "CSS3", "JavaScript", "React", "Vue.js", "TypeScript", "Next.js", "Vite", "Angular", "Tailwind CSS", "Bootstrap"]
+  },
+  {
+    title: "Backend Development",
+    skills: ["Node.js", ".NET Core", "C#", "Express.js", "Python", "Django", "PHP", "Laravel", "Java", "Spring Boot"]
+  },
+  {
+    title: "Databases",
+    skills: ["MySQL", "PostgreSQL", "MongoDB", "Firebase", "Oracle"]
+  },
+  {
+    title: "AI & Machine Learning",
+    skills: ["TensorFlow.js", "Web Speech API"]
+  },
+  {
+    title: "QA & Testing Tools",
+    skills: ["Software QA", "SQA Testing", "JMeter"]
+  },
+  {
+    title: "Development Tools",
+    skills: ["Git", "GitHub", "Vercel", "VS Code", "Android Studio", "Postman", "Figma"]
+  }
+];
+
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showAllProjects, setShowAllProjects] = useState(false);
@@ -355,10 +382,17 @@ function App() {
             <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-green-400 mx-auto rounded-full"></div>
             <p className="text-gray-400 mt-6 max-w-2xl mx-auto">Technologies and tools I use to bring ideas to life.</p>
           </div>
-          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-            {['React', 'TypeScript', 'Next.js', 'Node.js', 'Python', 'FastAPI', 'Java', '.NET', 'PHP', 'MongoDB', 'Tailwind CSS'].map((tech, i) => (
-              <div key={i} className="glass-panel px-6 py-3 rounded-full text-cyan-100 font-medium border-cyan-500/30 hover:border-cyan-400 hover:text-cyan-400 transition-all cursor-default shadow-lg shadow-cyan-900/20">
-                {tech}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {techCategories.map((category, idx) => (
+              <div key={idx} className="glass-panel p-6 rounded-xl border-gray-700 hover:border-cyan-500/30 transition-all duration-300">
+                <h3 className="text-xl font-bold text-white mb-4 border-b border-gray-700 pb-3">{category.title}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((tech, i) => (
+                    <span key={i} className="px-3 py-1 bg-navy-900/50 rounded-md text-sm text-cyan-200 border border-cyan-500/20 hover:border-cyan-400 transition-colors cursor-default">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
               </div>
             ))}
           </div>
