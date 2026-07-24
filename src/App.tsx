@@ -18,7 +18,8 @@ const projectsData = [
     name: "Edu-Connect",
     description: "Educational Learning Management System platform.",
     image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    link: "https://github.com/deshan2004/Edu-Connect"
+    link: "https://edu-connect-rust-eta.vercel.app",
+    isLive: true
   },
   {
     name: "Sky-Drifter",
@@ -42,19 +43,22 @@ const projectsData = [
     name: "CodePulse",
     description: "Automated Software Quality Assurance Dashboard built with FastAPI, Next.js.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    link: "https://github.com/deshan2004/CodePulse"
+    link: "https://code-pulse-jzq7.vercel.app/",
+    isLive: true
   },
   {
     name: "Neth-Sawan",
     description: "AI-driven accessibility platform for the hearing impaired.",
     image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    link: "https://github.com/deshan2004/Neth-Sawan"
+    link: "https://neth-sawan.vercel.app",
+    isLive: true
   },
   {
     name: "ShelfLife-AI",
     description: "AI-powered retail inventory management system using OCR technology.",
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    link: "https://github.com/deshan2004/ShelfLife-AI"
+    link: "https://shelf-life-ai.vercel.app/dashboard",
+    isLive: true
   },
   {
     name: "ChatBot",
@@ -78,7 +82,8 @@ const projectsData = [
     name: "Ultimate Guessing Game",
     description: "Modular, menu-driven Python application featuring multiple guessing games.",
     image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    link: "https://github.com/deshan2004/Ultimate-Guessing-Game-Python"
+    link: "https://ultimate-guessing-game-python-ufca4jfzddoh3ovzjwg9dm.streamlit.app/",
+    isLive: true
   },
   {
     name: "BankAccount Unit Testing",
@@ -90,13 +95,21 @@ const projectsData = [
     name: "Employee Project Management",
     description: "Employee project management system built with PHP.",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    link: "https://github.com/deshan2004/employee-project-managment-system"
+    link: "https://employee-project-managment-system.vercel.app",
+    isLive: true
   },
   {
     name: "Social Media Analysis",
     description: "Statistical analysis of social media addiction among students.",
     image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     link: "https://github.com/deshan2004/student-social-media-analysis"
+  },
+  {
+    name: "Kingswood-Connect",
+    description: "School networking and community connection platform.",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    link: "https://kingswood-connect.vercel.app",
+    isLive: true
   }
 ];
 
@@ -329,7 +342,13 @@ function App() {
                     <p className="text-gray-300">{project.description}</p>
                   </div>
                   <div className="bg-navy-900/80 p-2 rounded-full border border-gray-600 group-hover:border-cyan-400 group-hover:text-cyan-400 text-gray-400 transition-all shrink-0 ml-4">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" /></svg>
+                    {project.isLive ? (
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    ) : (
+                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" /></svg>
+                    )}
                   </div>
                 </div>
               </a>
