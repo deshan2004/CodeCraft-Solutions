@@ -464,7 +464,7 @@ function App() {
               <p className="text-gray-400 mb-6">Perfect for small businesses and personal portfolios.</p>
               <div className="mb-4 flex items-end">
                 <span className="text-gray-400 mr-2 mb-1">From</span>
-                <span className="text-3xl font-extrabold text-cyan-400">$150</span>
+                <span className="text-3xl font-extrabold text-cyan-400">Rs. 15,000</span>
               </div>
               <p className="text-sm text-cyan-400 mb-6 font-medium">Custom Quote available</p>
               <ul className="space-y-4 mb-8 flex-grow text-gray-300">
@@ -483,7 +483,7 @@ function App() {
               <p className="text-gray-400 mb-6">Ideal for growing companies needing dynamic features.</p>
               <div className="mb-4 flex items-end">
                 <span className="text-gray-400 mr-2 mb-1">From</span>
-                <span className="text-3xl font-extrabold text-cyan-400">$499</span>
+                <span className="text-3xl font-extrabold text-cyan-400">Rs. 50,000</span>
               </div>
               <p className="text-sm text-cyan-400 mb-6 font-medium">Custom Quote available</p>
               <ul className="space-y-4 mb-8 flex-grow text-gray-300">
@@ -502,7 +502,7 @@ function App() {
               <p className="text-gray-400 mb-6">For large scale systems and mobile applications.</p>
               <div className="mb-4 flex items-end">
                 <span className="text-gray-400 mr-2 mb-1">From</span>
-                <span className="text-3xl font-extrabold text-green-400">$1,499</span>
+                <span className="text-3xl font-extrabold text-green-400">Rs. 150,000</span>
               </div>
               <p className="text-sm text-green-400 mb-6 font-medium">Custom Quote available</p>
               <ul className="space-y-4 mb-8 flex-grow text-gray-300">
