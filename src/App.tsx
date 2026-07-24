@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { 
   MonitorSmartphone, 
   Smartphone, 
@@ -5,10 +6,17 @@ import {
   PenTool, 
   ChevronRight, 
   Mail, 
-  MapPin 
+  MapPin,
+  Menu,
+  X
 } from 'lucide-react';
 
 function App() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
   return (
     <div className="min-h-screen bg-navy-900 text-gray-100 font-sans selection:bg-cyan-500/30">
       {/* Navigation (Optional but good for a landing page) */}
@@ -29,8 +37,26 @@ function App() {
                 <a href="#contact" className="hover:text-cyan-400 transition-colors px-3 py-2 text-sm font-medium">Contact</a>
               </div>
             </div>
+            {/* Mobile menu button */}
+            <div className="md:hidden flex items-center">
+              <button onClick={toggleMenu} className="text-gray-300 hover:text-cyan-400 focus:outline-none p-2 transition-colors">
+                {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              </button>
+            </div>
           </div>
         </div>
+        
+        {/* Mobile Menu Dropdown */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden bg-navy-900/95 backdrop-blur-xl border-b border-gray-800 shadow-xl shadow-cyan-900/10">
+            <div className="px-4 pt-2 pb-6 space-y-2 flex flex-col">
+              <a href="#about" onClick={toggleMenu} className="text-gray-300 hover:text-cyan-400 hover:bg-gray-800/50 transition-all rounded-lg px-4 py-3 text-base font-medium">About</a>
+              <a href="#services" onClick={toggleMenu} className="text-gray-300 hover:text-cyan-400 hover:bg-gray-800/50 transition-all rounded-lg px-4 py-3 text-base font-medium">Services</a>
+              <a href="#projects" onClick={toggleMenu} className="text-gray-300 hover:text-cyan-400 hover:bg-gray-800/50 transition-all rounded-lg px-4 py-3 text-base font-medium">Projects</a>
+              <a href="#contact" onClick={toggleMenu} className="text-gray-300 hover:text-cyan-400 hover:bg-gray-800/50 transition-all rounded-lg px-4 py-3 text-base font-medium">Contact</a>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* 1. Hero Section */}
