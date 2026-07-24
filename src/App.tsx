@@ -254,6 +254,30 @@ function App() {
         </div>
       </section>
 
+      {/* 1.5 Stats Section */}
+      <section className="py-10 border-y border-gray-800 bg-navy-900/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <h3 className="text-4xl font-extrabold text-cyan-400 mb-2">15+</h3>
+              <p className="text-gray-400 font-medium">Projects Completed</p>
+            </div>
+            <div>
+              <h3 className="text-4xl font-extrabold text-green-400 mb-2">2+</h3>
+              <p className="text-gray-400 font-medium">Years Experience</p>
+            </div>
+            <div>
+              <h3 className="text-4xl font-extrabold text-cyan-400 mb-2">100%</h3>
+              <p className="text-gray-400 font-medium">Client Satisfaction</p>
+            </div>
+            <div>
+              <h3 className="text-4xl font-extrabold text-green-400 mb-2">24/7</h3>
+              <p className="text-gray-400 font-medium">Support</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* 2. About Us Section */}
       <section id="about" className="py-20 bg-navy-800/30 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -323,6 +347,24 @@ function App() {
         </div>
       </section>
 
+      {/* 3.5 Tech Stack */}
+      <section className="py-20 relative bg-navy-800/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">My <span className="text-cyan-400">Tech Stack</span></h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-green-400 mx-auto rounded-full"></div>
+            <p className="text-gray-400 mt-6 max-w-2xl mx-auto">Technologies and tools I use to bring ideas to life.</p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+            {['React', 'TypeScript', 'Next.js', 'Node.js', 'Python', 'FastAPI', 'Java', '.NET', 'PHP', 'MongoDB', 'Tailwind CSS'].map((tech, i) => (
+              <div key={i} className="glass-panel px-6 py-3 rounded-full text-cyan-100 font-medium border-cyan-500/30 hover:border-cyan-400 hover:text-cyan-400 transition-all cursor-default shadow-lg shadow-cyan-900/20">
+                {tech}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* 4. Featured Projects */}
       <section id="projects" className="py-24 bg-navy-800/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -368,6 +410,54 @@ function App() {
                 <>Show More ({projectsData.length - 4} more) <ChevronDown className="ml-2 w-5 h-5" /></>
               )}
             </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-24 bg-navy-800/30 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Client <span className="text-green-400">Testimonials</span></h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-cyan-400 mx-auto rounded-full"></div>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              { text: "Outstanding quality and fast delivery. The web app exceeded all our expectations!", author: "Sarah Jenkins", role: "Startup Founder" },
+              { text: "Very professional and communicative throughout the entire process. Highly recommended.", author: "David Chen", role: "Product Manager" },
+              { text: "Transformed our ideas into a beautiful, scalable solution. Will definitely work together again.", author: "Amanda Silva", role: "Creative Director" }
+            ].map((testimonial, i) => (
+              <div key={i} className="glass-panel p-8 rounded-2xl relative border-gray-700 hover:border-green-500/50 transition-all duration-300">
+                <svg className="w-10 h-10 text-gray-700 absolute top-6 right-6 opacity-50" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
+                <p className="text-gray-300 italic mb-6 relative z-10">"{testimonial.text}"</p>
+                <div>
+                  <h4 className="text-white font-bold">{testimonial.author}</h4>
+                  <p className="text-cyan-400 text-sm">{testimonial.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-24 relative">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Frequently Asked <span className="text-cyan-400">Questions</span></h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-green-400 mx-auto rounded-full"></div>
+          </div>
+          <div className="space-y-6">
+            {[
+              { q: "What is your typical project timeline?", a: "Project timelines vary depending on complexity, but typically a standard web application takes between 2 to 6 weeks from initial consultation to final delivery." },
+              { q: "Do you provide ongoing support after deployment?", a: "Yes! We offer maintenance packages to ensure your application remains secure, up-to-date, and continues to perform optimally." },
+              { q: "How do we get started?", a: "Simply fill out the contact form below with your project details, and we will get back to you within 24 hours to schedule a free consultation." }
+            ].map((faq, i) => (
+              <div key={i} className="glass-panel p-6 rounded-xl border-gray-700 hover:border-cyan-500/50 transition-all duration-300">
+                <h4 className="text-lg font-bold text-white mb-2">{faq.q}</h4>
+                <p className="text-gray-400">{faq.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
