@@ -1,0 +1,295 @@
+import { 
+  MonitorSmartphone, 
+  Smartphone, 
+  Cpu, 
+  PenTool, 
+  ChevronRight, 
+  Mail, 
+  MapPin 
+} from 'lucide-react';
+
+function App() {
+  return (
+    <div className="min-h-screen bg-navy-900 text-gray-100 font-sans selection:bg-cyan-500/30">
+      {/* Navigation (Optional but good for a landing page) */}
+      <nav className="fixed w-full z-50 glass-panel border-b-0 border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-20">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 rounded bg-gradient-to-tr from-cyan-400 to-green-400 flex items-center justify-center">
+                <span className="font-bold text-navy-900 text-lg">C</span>
+              </div>
+              <span className="text-xl font-bold tracking-tight text-white">CodeCraft <span className="text-cyan-400">Solutions</span></span>
+            </div>
+            <div className="hidden md:block">
+              <div className="ml-10 flex items-baseline space-x-8">
+                <a href="#about" className="hover:text-cyan-400 transition-colors px-3 py-2 text-sm font-medium">About</a>
+                <a href="#services" className="hover:text-cyan-400 transition-colors px-3 py-2 text-sm font-medium">Services</a>
+                <a href="#projects" className="hover:text-cyan-400 transition-colors px-3 py-2 text-sm font-medium">Projects</a>
+                <a href="#contact" className="hover:text-cyan-400 transition-colors px-3 py-2 text-sm font-medium">Contact</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* 1. Hero Section */}
+      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-500/20 rounded-full blur-[120px]"></div>
+          <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-green-500/20 rounded-full blur-[120px]"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-8">
+            Building <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-cyan-200">Modern Web</span> & <br className="hidden md:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-200">Mobile Solutions</span> For Your Business
+          </h1>
+          <p className="mt-4 text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-10 leading-relaxed">
+            We transform your innovative ideas into powerful, high-performing websites and mobile applications tailored to drive your success.
+          </p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
+            <a href="#contact" className="px-8 py-4 rounded-lg font-bold text-navy-900 bg-cyan-400 hover:bg-cyan-300 transition-all duration-300 shadow-[0_0_20px_rgba(34,211,238,0.4)] hover:shadow-[0_0_30px_rgba(34,211,238,0.6)] flex items-center justify-center group">
+              Get a Free Quote
+              <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+            <a href="#projects" className="px-8 py-4 rounded-lg font-bold text-white border border-gray-600 hover:border-cyan-400 hover:text-cyan-400 transition-all duration-300 glass-panel flex items-center justify-center">
+              Explore Our Work
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. About Us Section */}
+      <section id="about" className="py-20 bg-navy-800/30 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+                Who <span className="text-cyan-400">We Are</span>
+              </h2>
+              <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-green-400 mb-8 rounded-full"></div>
+              <p className="text-lg text-gray-300 leading-relaxed">
+                At CodeCraft Solutions, we are a passionate technology agency committed to delivering cutting-edge digital experiences. We specialize in full-stack web application development, custom mobile app solutions, and robust enterprise software designed to scale your business.
+              </p>
+            </div>
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/10 to-green-500/10 rounded-2xl transform rotate-3 scale-105 blur-sm"></div>
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team collaborating" className="rounded-2xl shadow-2xl relative z-10 border border-gray-700 object-cover aspect-video" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. Services Section */}
+      <section id="services" className="py-24 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Our <span className="text-green-400">Services</span></h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-green-400 to-cyan-400 mx-auto rounded-full"></div>
+          </div>
+          
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Service 1 */}
+            <div className="glass-panel p-8 rounded-xl hover:-translate-y-2 transition-all duration-300 group hover:border-cyan-500/50">
+              <div className="w-14 h-14 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 transition-colors">
+                <MonitorSmartphone className="w-8 h-8 text-cyan-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">Full-Stack Web Development</h3>
+              <p className="text-gray-400">Custom, responsive web applications built with modern frameworks for optimal performance.</p>
+            </div>
+
+            {/* Service 2 */}
+            <div className="glass-panel p-8 rounded-xl hover:-translate-y-2 transition-all duration-300 group hover:border-green-500/50">
+              <div className="w-14 h-14 bg-green-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-green-500/20 transition-colors">
+                <Smartphone className="w-8 h-8 text-green-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">Mobile App Development</h3>
+              <p className="text-gray-400">iOS and Android native-performing applications that offer seamless user experiences.</p>
+            </div>
+
+            {/* Service 3 */}
+            <div className="glass-panel p-8 rounded-xl hover:-translate-y-2 transition-all duration-300 group hover:border-cyan-500/50">
+              <div className="w-14 h-14 bg-cyan-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-cyan-500/20 transition-colors">
+                <Cpu className="w-8 h-8 text-cyan-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">Custom Software & AI</h3>
+              <p className="text-gray-400">Enterprise portals, inventory tracking, and smart system integrations to automate your workflow.</p>
+            </div>
+
+            {/* Service 4 */}
+            <div className="glass-panel p-8 rounded-xl hover:-translate-y-2 transition-all duration-300 group hover:border-green-500/50">
+              <div className="w-14 h-14 bg-green-500/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-green-500/20 transition-colors">
+                <PenTool className="w-8 h-8 text-green-400" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">UI/UX & QA</h3>
+              <p className="text-gray-400">Sleek visual designs and rigorous automated testing ensuring flawless digital products.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 4. Featured Projects */}
+      <section id="projects" className="py-24 bg-navy-800/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Featured <span className="text-cyan-400">Projects</span></h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-green-400 mx-auto rounded-full"></div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Project 1 */}
+            <div className="group relative rounded-xl overflow-hidden glass-panel border-gray-700">
+              <div className="aspect-video w-full overflow-hidden bg-gray-800 relative">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="EduConnect" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-900 to-transparent opacity-80"></div>
+              </div>
+              <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full">
+                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">EduConnect</h3>
+                <p className="text-gray-300">Multi-panel Learning Management System.</p>
+              </div>
+            </div>
+
+            {/* Project 2 */}
+            <div className="group relative rounded-xl overflow-hidden glass-panel border-gray-700">
+              <div className="aspect-video w-full overflow-hidden bg-gray-800 relative">
+                <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="ShelfLife AI" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-900 to-transparent opacity-80"></div>
+              </div>
+              <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full">
+                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors">ShelfLife AI</h3>
+                <p className="text-gray-300">Smart inventory tracking with AI-driven insights.</p>
+              </div>
+            </div>
+
+            {/* Project 3 */}
+            <div className="group relative rounded-xl overflow-hidden glass-panel border-gray-700">
+              <div className="aspect-video w-full overflow-hidden bg-gray-800 relative">
+                <img src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="CineMate" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-900 to-transparent opacity-80"></div>
+              </div>
+              <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full">
+                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">CineMate</h3>
+                <p className="text-gray-300">Dynamic media management and streaming platform.</p>
+              </div>
+            </div>
+
+            {/* Project 4 */}
+            <div className="group relative rounded-xl overflow-hidden glass-panel border-gray-700">
+              <div className="aspect-video w-full overflow-hidden bg-gray-800 relative">
+                <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="TailWatch" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100" />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy-900 to-transparent opacity-80"></div>
+              </div>
+              <div className="absolute bottom-0 left-0 p-6 md:p-8 w-full">
+                <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-green-400 transition-colors">TailWatch</h3>
+                <p className="text-gray-300">Community web app for animal care and tracking.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Footer & Contact */}
+      <section id="contact" className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
+           <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-cyan-500/20 rounded-full blur-[150px]"></div>
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid md:grid-cols-2 gap-16">
+            
+            {/* Contact Details */}
+            <div>
+              <h2 className="text-4xl font-bold mb-6 text-white">Let's <span className="text-cyan-400">Talk</span></h2>
+              <p className="text-gray-400 mb-10 text-lg">
+                Ready to transform your ideas into reality? Get in touch with us to discuss your next big project.
+              </p>
+              
+              <div className="space-y-6 mb-12">
+                <div className="flex items-start">
+                  <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mr-4 border border-gray-700">
+                    <Mail className="w-6 h-6 text-cyan-400" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm text-gray-400 uppercase tracking-wider font-semibold">Email Us</h4>
+                    <a href="mailto:hello@codecraftsolutions.lk" className="text-lg text-white hover:text-cyan-400 transition-colors">hello@codecraftsolutions.lk</a>
+                  </div>
+                </div>
+                
+                <div className="flex items-start">
+                  <div className="w-12 h-12 bg-gray-800 rounded-lg flex items-center justify-center mr-4 border border-gray-700">
+                    <MapPin className="w-6 h-6 text-green-400" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm text-gray-400 uppercase tracking-wider font-semibold">Location</h4>
+                    <p className="text-lg text-white">Colombo, Sri Lanka</p>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <h4 className="text-sm text-gray-400 uppercase tracking-wider font-semibold mb-4">Follow Us</h4>
+                <div className="flex space-x-4">
+                  <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700 transition-all">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                    </svg>
+                  </a>
+                  <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700 transition-all">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fillRule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clipRule="evenodd" />
+                    </svg>
+                  </a>
+                  <a href="#" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-gray-700 transition-all">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <div className="glass-panel p-8 md:p-10 rounded-2xl">
+              <form className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">Name</label>
+                  <input type="text" id="name" className="w-full bg-navy-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all" placeholder="John Doe" />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">Email</label>
+                  <input type="email" id="email" className="w-full bg-navy-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all" placeholder="john@example.com" />
+                </div>
+                <div>
+                  <label htmlFor="service" className="block text-sm font-medium text-gray-400 mb-2">Service Needed</label>
+                  <select id="service" className="w-full bg-navy-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all appearance-none">
+                    <option value="">Select a service</option>
+                    <option value="web">Web Development</option>
+                    <option value="mobile">Mobile App</option>
+                    <option value="software">Custom Software</option>
+                    <option value="uiux">UI/UX Design</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">Message</label>
+                  <textarea id="message" rows={4} className="w-full bg-navy-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all resize-none" placeholder="Tell us about your project..."></textarea>
+                </div>
+                <button type="button" className="w-full bg-cyan-500 hover:bg-cyan-400 text-navy-900 font-bold py-4 px-8 rounded-lg transition-all duration-300 shadow-[0_0_15px_rgba(34,211,238,0.3)] hover:shadow-[0_0_25px_rgba(34,211,238,0.5)]">
+                  Send Message
+                </button>
+              </form>
+            </div>
+
+          </div>
+        </div>
+        
+        {/* Footer Bottom */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-20 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+          <p>&copy; {new Date().getFullYear()} CodeCraft Solutions. All rights reserved.</p>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export default App;
