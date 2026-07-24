@@ -103,6 +103,40 @@ const projectsData = [
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showAllProjects, setShowAllProjects] = useState(false);
+  
+  // Contact Form State
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    service: '',
+    message: ''
+  });
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { name, email, service, message } = formData;
+    
+    if (!name || !email || !message) {
+      alert('Please fill in all required fields (Name, Email, Message).');
+      return;
+    }
+    
+    const subject = `New Inquiry from ${name} - ${service || 'General'}`;
+    const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0AService Needed: ${service}%0D%0A%0D%0AMessage:%0D%0A${message}`;
+    
+    window.location.href = `mailto:codecraftsolutionslk@gmail.com?subject=${subject}&body=${body}`;
+    
+    // Clear form after submission attempt
+    setFormData({ name: '', email: '', service: '', message: '' });
+  };
 
   const toggleMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -353,30 +387,30 @@ function App() {
 
             {/* Contact Form */}
             <div className="glass-panel p-8 md:p-10 rounded-2xl">
-              <form className="space-y-6">
+              <form className="space-y-6" onSubmit={handleSubmit}>
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">Name</label>
-                  <input type="text" id="name" className="w-full bg-navy-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all" placeholder="John Doe" />
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">Name *</label>
+                  <input type="text" id="name" value={formData.name} onChange={handleInputChange} required className="w-full bg-navy-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all" placeholder="John Doe" />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">Email</label>
-                  <input type="email" id="email" className="w-full bg-navy-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all" placeholder="john@example.com" />
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">Email *</label>
+                  <input type="email" id="email" value={formData.email} onChange={handleInputChange} required className="w-full bg-navy-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all" placeholder="john@example.com" />
                 </div>
                 <div>
                   <label htmlFor="service" className="block text-sm font-medium text-gray-400 mb-2">Service Needed</label>
-                  <select id="service" className="w-full bg-navy-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all appearance-none">
+                  <select id="service" value={formData.service} onChange={handleInputChange} className="w-full bg-navy-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all appearance-none">
                     <option value="">Select a service</option>
-                    <option value="web">Web Development</option>
-                    <option value="mobile">Mobile App</option>
-                    <option value="software">Custom Software</option>
-                    <option value="uiux">UI/UX Design</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Mobile App">Mobile App</option>
+                    <option value="Custom Software">Custom Software</option>
+                    <option value="UI/UX Design">UI/UX Design</option>
                   </select>
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">Message</label>
-                  <textarea id="message" rows={4} className="w-full bg-navy-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all resize-none" placeholder="Tell us about your project..."></textarea>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">Message *</label>
+                  <textarea id="message" value={formData.message} onChange={handleInputChange} required rows={4} className="w-full bg-navy-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all resize-none" placeholder="Tell us about your project..."></textarea>
                 </div>
-                <button type="button" className="w-full bg-cyan-500 hover:bg-cyan-400 text-navy-900 font-bold py-4 px-8 rounded-lg transition-all duration-300 shadow-[0_0_15px_rgba(34,211,238,0.3)] hover:shadow-[0_0_25px_rgba(34,211,238,0.5)]">
+                <button type="submit" className="w-full bg-cyan-500 hover:bg-cyan-400 text-navy-900 font-bold py-4 px-8 rounded-lg transition-all duration-300 shadow-[0_0_15px_rgba(34,211,238,0.3)] hover:shadow-[0_0_25px_rgba(34,211,238,0.5)]">
                   Send Message
                 </button>
               </form>
