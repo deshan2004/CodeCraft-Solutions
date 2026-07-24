@@ -405,7 +405,7 @@ function App() {
                     </svg>
                   </a>
                   {/* Portfolio */}
-                  <a href="https://github.com/deshan2004" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-green-400 hover:bg-gray-700 hover:shadow-[0_0_10px_rgba(74,222,128,0.4)] transition-all" title="Portfolio">
+                  <a href="https://deshansiriwardhana.me" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:text-green-400 hover:bg-gray-700 hover:shadow-[0_0_10px_rgba(74,222,128,0.4)] transition-all" title="Portfolio">
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
                     </svg>
