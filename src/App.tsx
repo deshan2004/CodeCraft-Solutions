@@ -448,6 +448,69 @@ function App() {
         </div>
       </section>
 
+      {/* 4.5 Service Packages */}
+      <section className="py-24 relative bg-navy-900/50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">Service <span className="text-cyan-400">Packages</span></h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-green-400 mx-auto rounded-full"></div>
+            <p className="text-gray-400 mt-6 max-w-2xl mx-auto">Flexible solutions tailored to your business needs.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            
+            {/* Starter Package */}
+            <div className="glass-panel p-8 rounded-2xl border-gray-700 hover:border-cyan-500/50 transition-all duration-300 relative flex flex-col">
+              <h3 className="text-2xl font-bold text-white mb-2">Starter</h3>
+              <p className="text-gray-400 mb-6">Perfect for small businesses and personal portfolios.</p>
+              <div className="mb-6">
+                <span className="text-3xl font-extrabold text-cyan-400">Custom Quote</span>
+              </div>
+              <ul className="space-y-4 mb-8 flex-grow text-gray-300">
+                <li className="flex items-center"><ChevronRight className="w-5 h-5 text-green-400 mr-2 shrink-0" /> Single Page / Landing Page</li>
+                <li className="flex items-center"><ChevronRight className="w-5 h-5 text-green-400 mr-2 shrink-0" /> Responsive UI Design</li>
+                <li className="flex items-center"><ChevronRight className="w-5 h-5 text-green-400 mr-2 shrink-0" /> Contact Form Integration</li>
+                <li className="flex items-center"><ChevronRight className="w-5 h-5 text-green-400 mr-2 shrink-0" /> Basic SEO Optimization</li>
+              </ul>
+              <a href="#contact" className="w-full py-3 rounded-lg font-bold text-center border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-navy-900 transition-all">Let's Discuss</a>
+            </div>
+
+            {/* Professional Package */}
+            <div className="glass-panel p-8 rounded-2xl border-cyan-500/50 hover:border-cyan-400 transition-all duration-300 relative flex flex-col transform md:-translate-y-4 shadow-[0_0_30px_rgba(34,211,238,0.15)] bg-cyan-900/10">
+              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-cyan-400 to-green-400 text-navy-900 px-4 py-1 rounded-full text-sm font-bold tracking-wider">RECOMMENDED</div>
+              <h3 className="text-2xl font-bold text-white mb-2">Professional</h3>
+              <p className="text-gray-400 mb-6">Ideal for growing companies needing dynamic features.</p>
+              <div className="mb-6">
+                <span className="text-3xl font-extrabold text-cyan-400">Custom Quote</span>
+              </div>
+              <ul className="space-y-4 mb-8 flex-grow text-gray-300">
+                <li className="flex items-center"><ChevronRight className="w-5 h-5 text-green-400 mr-2 shrink-0" /> Multi-page Web Application</li>
+                <li className="flex items-center"><ChevronRight className="w-5 h-5 text-green-400 mr-2 shrink-0" /> Custom Admin Dashboard</li>
+                <li className="flex items-center"><ChevronRight className="w-5 h-5 text-green-400 mr-2 shrink-0" /> Database Integration</li>
+                <li className="flex items-center"><ChevronRight className="w-5 h-5 text-green-400 mr-2 shrink-0" /> User Authentication</li>
+              </ul>
+              <a href="#contact" className="w-full py-3 rounded-lg font-bold text-center bg-cyan-400 text-navy-900 hover:bg-cyan-300 transition-all shadow-[0_0_15px_rgba(34,211,238,0.4)]">Let's Discuss</a>
+            </div>
+
+            {/* Enterprise Package */}
+            <div className="glass-panel p-8 rounded-2xl border-gray-700 hover:border-green-500/50 transition-all duration-300 relative flex flex-col">
+              <h3 className="text-2xl font-bold text-white mb-2">Enterprise</h3>
+              <p className="text-gray-400 mb-6">For large scale systems and mobile applications.</p>
+              <div className="mb-6">
+                <span className="text-3xl font-extrabold text-green-400">Custom Quote</span>
+              </div>
+              <ul className="space-y-4 mb-8 flex-grow text-gray-300">
+                <li className="flex items-center"><ChevronRight className="w-5 h-5 text-green-400 mr-2 shrink-0" /> iOS & Android Mobile Apps</li>
+                <li className="flex items-center"><ChevronRight className="w-5 h-5 text-green-400 mr-2 shrink-0" /> AI & Machine Learning</li>
+                <li className="flex items-center"><ChevronRight className="w-5 h-5 text-green-400 mr-2 shrink-0" /> Advanced Security & QA</li>
+                <li className="flex items-center"><ChevronRight className="w-5 h-5 text-green-400 mr-2 shrink-0" /> 24/7 Priority Support</li>
+              </ul>
+              <a href="#contact" className="w-full py-3 rounded-lg font-bold text-center border border-green-400 text-green-400 hover:bg-green-400 hover:text-navy-900 transition-all">Let's Discuss</a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section className="py-24 bg-navy-800/30 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
