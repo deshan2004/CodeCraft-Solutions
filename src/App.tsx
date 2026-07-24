@@ -112,7 +112,7 @@ function App() {
     message: ''
   });
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: any) => {
     const { id, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -120,7 +120,7 @@ function App() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     const { name, email, service, message } = formData;
     
