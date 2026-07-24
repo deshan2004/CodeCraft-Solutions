@@ -169,7 +169,7 @@ function App() {
               Get a Free Quote
               <ChevronRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
-            <a href="https://github.com/deshan2004" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-lg font-bold text-white border border-gray-600 hover:border-cyan-400 hover:text-cyan-400 transition-all duration-300 glass-panel flex items-center justify-center">
+            <a href="https://deshansiriwardhana.me/" target="_blank" rel="noopener noreferrer" className="px-8 py-4 rounded-lg font-bold text-white border border-gray-600 hover:border-cyan-400 hover:text-cyan-400 transition-all duration-300 glass-panel flex items-center justify-center">
               View My Portfolio
             </a>
           </div>
@@ -274,7 +274,7 @@ function App() {
           </div>
 
           <div className="flex justify-center mt-12">
-            <button 
+            <button
               onClick={() => setShowAllProjects(!showAllProjects)}
               className="px-8 py-3 rounded-full font-bold text-white border border-cyan-500 hover:bg-cyan-500/10 transition-all duration-300 flex items-center"
             >
