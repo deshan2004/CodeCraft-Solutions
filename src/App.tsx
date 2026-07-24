@@ -462,9 +462,11 @@ function App() {
             <div className="glass-panel p-8 rounded-2xl border-gray-700 hover:border-cyan-500/50 transition-all duration-300 relative flex flex-col">
               <h3 className="text-2xl font-bold text-white mb-2">Starter</h3>
               <p className="text-gray-400 mb-6">Perfect for small businesses and personal portfolios.</p>
-              <div className="mb-6">
-                <span className="text-3xl font-extrabold text-cyan-400">Custom Quote</span>
+              <div className="mb-4 flex items-end">
+                <span className="text-gray-400 mr-2 mb-1">From</span>
+                <span className="text-3xl font-extrabold text-cyan-400">$150</span>
               </div>
+              <p className="text-sm text-cyan-400 mb-6 font-medium">Custom Quote available</p>
               <ul className="space-y-4 mb-8 flex-grow text-gray-300">
                 <li className="flex items-center"><ChevronRight className="w-5 h-5 text-green-400 mr-2 shrink-0" /> Single Page / Landing Page</li>
                 <li className="flex items-center"><ChevronRight className="w-5 h-5 text-green-400 mr-2 shrink-0" /> Responsive UI Design</li>
@@ -479,10 +481,13 @@ function App() {
               <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-cyan-400 to-green-400 text-navy-900 px-4 py-1 rounded-full text-sm font-bold tracking-wider">RECOMMENDED</div>
               <h3 className="text-2xl font-bold text-white mb-2">Professional</h3>
               <p className="text-gray-400 mb-6">Ideal for growing companies needing dynamic features.</p>
-              <div className="mb-6">
-                <span className="text-3xl font-extrabold text-cyan-400">Custom Quote</span>
+              <div className="mb-4 flex items-end">
+                <span className="text-gray-400 mr-2 mb-1">From</span>
+                <span className="text-3xl font-extrabold text-cyan-400">$499</span>
               </div>
+              <p className="text-sm text-cyan-400 mb-6 font-medium">Custom Quote available</p>
               <ul className="space-y-4 mb-8 flex-grow text-gray-300">
+                <li className="flex items-center text-sm font-semibold text-white mb-2 pb-2 border-b border-gray-700">Everything in Starter, plus:</li>
                 <li className="flex items-center"><ChevronRight className="w-5 h-5 text-green-400 mr-2 shrink-0" /> Multi-page Web Application</li>
                 <li className="flex items-center"><ChevronRight className="w-5 h-5 text-green-400 mr-2 shrink-0" /> Custom Admin Dashboard</li>
                 <li className="flex items-center"><ChevronRight className="w-5 h-5 text-green-400 mr-2 shrink-0" /> Database Integration</li>
@@ -495,10 +500,13 @@ function App() {
             <div className="glass-panel p-8 rounded-2xl border-gray-700 hover:border-green-500/50 transition-all duration-300 relative flex flex-col">
               <h3 className="text-2xl font-bold text-white mb-2">Enterprise</h3>
               <p className="text-gray-400 mb-6">For large scale systems and mobile applications.</p>
-              <div className="mb-6">
-                <span className="text-3xl font-extrabold text-green-400">Custom Quote</span>
+              <div className="mb-4 flex items-end">
+                <span className="text-gray-400 mr-2 mb-1">From</span>
+                <span className="text-3xl font-extrabold text-green-400">$1,499</span>
               </div>
+              <p className="text-sm text-green-400 mb-6 font-medium">Custom Quote available</p>
               <ul className="space-y-4 mb-8 flex-grow text-gray-300">
+                <li className="flex items-center text-sm font-semibold text-white mb-2 pb-2 border-b border-gray-700">Everything in Professional, plus:</li>
                 <li className="flex items-center"><ChevronRight className="w-5 h-5 text-green-400 mr-2 shrink-0" /> iOS & Android Mobile Apps</li>
                 <li className="flex items-center"><ChevronRight className="w-5 h-5 text-green-400 mr-2 shrink-0" /> AI & Machine Learning</li>
                 <li className="flex items-center"><ChevronRight className="w-5 h-5 text-green-400 mr-2 shrink-0" /> Advanced Security & QA</li>
