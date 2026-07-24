@@ -148,7 +148,8 @@ function App() {
           email: email,
           service: service || 'General',
           message: message,
-          subject: `New Inquiry from ${name} - ${service || 'General'}`
+          subject: `New Inquiry from ${name} - CodeCraft Solutions`,
+          from_name: "CodeCraft Website"
         }),
       });
 
